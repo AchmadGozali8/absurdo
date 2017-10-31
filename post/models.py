@@ -69,12 +69,13 @@ class Likes(DateTimeHandlerModel):
                                 db_column='user_id')
     post_id = models.ForeignKey('Posts', on_delete=models.CASCADE,
                                 db_column='post_id')
+    reaction = models.CharField(max_length=10, null=True)
 
     class Meta:
         db_table = 'likes'
 
     def __str__(self, *args, **kwargs):
-        return 'users {}, posts liked {}'.format(user_id, post_id)
+        return '{}'.format(reaction)
 
     def save(self, *args, **kwargs):
         if self.created_at is None:
