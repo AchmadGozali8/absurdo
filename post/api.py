@@ -1,7 +1,5 @@
 from rest_framework.viewsets import ModelViewSet
-
 from django.contrib.auth.models import User
-
 from .models import Posts, Comments, Likes, Alarams
 from .serializers import (UserSerializer, PostsSerializer, LikesSerializer,
                           CommentsSerializer, AlaramsSerializer)
